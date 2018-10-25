@@ -1,4 +1,5 @@
 import pygame as pg
+from player import *
 from settings import *
 
 
@@ -12,6 +13,8 @@ class Game:
         self.running = True
     def new(self):
         self.all_sprites = pg.sprite.Group()
+        self.player = Player(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2)
+        self.all_sprites.add(self.player)
         self.run()
     def events(self):
         for event in pg.event.get():
